@@ -1,6 +1,6 @@
-import TaskStructure from "../store/types";
+import ToDoStructure from "../store/types";
 
-const taskMocks: TaskStructure[] = [
+const toDoMocks: ToDoStructure[] = [
   {
     id: 1,
     name: "Call Barack Obama",
@@ -13,4 +13,4 @@ const taskMocks: TaskStructure[] = [
   },
 ];
 
-export default taskMocks;
+export default toDoMocks;
