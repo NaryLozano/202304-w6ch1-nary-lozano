@@ -1,7 +1,7 @@
-interface TaskStructure {
+interface ToDoStructure {
   id: number;
   name: string;
   isDone: boolean;
 }
 
-export default TaskStructure;
+export default ToDoStructure;
