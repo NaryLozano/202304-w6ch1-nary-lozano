@@ -1,6 +1,6 @@
 import ToDoStructure from "../store/types";
 
-const toDoMocks: ToDoStructure[] = [
+export const toDoMocks: ToDoStructure[] = [
   {
     id: 1,
     name: "Call Barack Obama",
@@ -13,4 +13,8 @@ const toDoMocks: ToDoStructure[] = [
   },
 ];
 
-export default toDoMocks;
+export const toDoMock: ToDoStructure = {
+  id: 4,
+  name: "Ask Frank if its going to rain",
+  isDone: false,
+};
