@@ -1,4 +1,4 @@
-import toDoMocks from "../../mocks/mock";
+import { toDoMocks } from "../../mocks/mock";
 import ToDoStructure from "../types";
 import {
   ToDoState,

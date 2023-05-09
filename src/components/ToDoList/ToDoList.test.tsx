@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import toDoMocks from "../../mocks/mock";
+import { toDoMocks } from "../../mocks/mock";
 import { setupStore } from "../../store";
 import ToDoList from "./ToDoList";
 import { Provider } from "react-redux";
