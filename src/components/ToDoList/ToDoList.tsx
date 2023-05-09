@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../store";
+import ToDoCard from "../ToDoCard/ToDoCard";
 
 const ToDoList = (): JSX.Element => {
   const toDos = useAppSelector((state) => state.toDoStore.toDos);
@@ -7,13 +8,7 @@ const ToDoList = (): JSX.Element => {
       <ul>
         {toDos.map((toDo) => (
           <li key={toDo.id}>
-            <h2>{toDo.name}</h2>
-            <input
-              type="checkbox"
-              id="IsDone"
-              checked={toDo.isDone ? true : false}
-            />
-            <label htmlFor="IsDone">Done</label>
+            <ToDoCard toDo={toDo} />
           </li>
         ))}
       </ul>
