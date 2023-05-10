@@ -1,3 +1,4 @@
+import useApi from "../../hooks/useApi";
 import { useAppDispatch } from "../../store";
 import { deleteToDoActionCreator } from "../../store/toDos/toDosSlice";
 import ToDoStructure from "../../store/types";
@@ -10,8 +11,14 @@ const ToDoCard = ({
   toDo: { name, isDone, id },
 }: toDoCardProps): JSX.Element => {
   const dispatch = useAppDispatch();
+  const { removeToDos } = useApi();
 
-  const handlerDelete = () => {
+  const handlerDelete = async () => {
+    try {
+      await removeToDos(id);
+    } catch {
+      return;
+    }
     dispatch(deleteToDoActionCreator(id));
   };
 
@@ -25,7 +32,7 @@ const ToDoCard = ({
         readOnly
       />
       <label htmlFor="IsDone">Done</label>
-      <button onClick={handlerDelete}>delete?</button>
+      <button onClick={handlerDelete}>Delete</button>
     </>
   );
 };
