@@ -6,10 +6,13 @@ export const toDoApi = import.meta.env.VITE_APP_TODO_API;
 
 const useApi = () => {
   const getToDos = useCallback(async (): Promise<ToDoStructure[]> => {
-    const { data: toDos } = await axios.get(`${toDoApi}/toDos`);
+    const { data: toDos } = await axios.get(`${toDoApi}/ToDos`);
     return toDos;
   }, []);
-  return { getToDos };
+  const removeToDos = (toDoId: number) => {
+    axios.delete(`${toDoApi}/ToDos/${toDoId}`);
+  };
+  return { getToDos, removeToDos };
 };
 
 export default useApi;
