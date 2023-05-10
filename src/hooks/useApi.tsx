@@ -9,8 +9,9 @@ const useApi = () => {
     const { data: toDos } = await axios.get(`${toDoApi}/ToDos`);
     return toDos;
   }, []);
-  const removeToDos = (toDoId: number) => {
-    axios.delete(`${toDoApi}/ToDos/${toDoId}`);
+  const removeToDos = async (toDoId: number) => {
+    const { status, data } = await axios.delete(`${toDoApi}/ToDos/${toDoId}`);
+    return { status, data };
   };
   return { getToDos, removeToDos };
 };
