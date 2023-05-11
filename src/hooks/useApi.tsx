@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import axios from "axios";
 import ToDoStructure from "../store/types";
+import { newTodoStructure } from "../components/ToDoForm/types";
 
 export const toDoApi = import.meta.env.VITE_APP_TODO_API;
 
@@ -13,7 +14,11 @@ const useApi = () => {
     const { status, data } = await axios.delete(`${toDoApi}/ToDos/${toDoId}`);
     return { status, data };
   };
-  return { getToDos, removeToDos };
+  const addToDo = async (newToDo: newTodoStructure): Promise<ToDoStructure> => {
+    const { data } = await axios.post(`${toDoApi}/ToDos`, newToDo);
+    return data;
+  };
+  return { getToDos, removeToDos, addToDo };
 };
 
 export default useApi;

@@ -21,10 +21,18 @@ export const toDoSlice = createSlice({
       ...currentState,
       toDos: currentState.toDos.filter((toDo) => toDo.id !== action.payload),
     }),
+    addToDo: (
+      currentState,
+      action: PayloadAction<ToDoStructure>
+    ): ToDoState => ({
+      ...currentState,
+      toDos: [...currentState.toDos, action.payload],
+    }),
   },
 });
 
 export const { loadToDo: loadToDoActionCreator } = toDoSlice.actions;
 export const { deleteToDo: deleteToDoActionCreator } = toDoSlice.actions;
+export const { addToDo: addToDoActionCreator } = toDoSlice.actions;
 
 export const toDosSliceReducer = toDoSlice.reducer;
