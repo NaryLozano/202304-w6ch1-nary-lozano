@@ -23,7 +23,7 @@ const ToDoCard = ({
   };
 
   return (
-    <>
+    <article>
       <h2>{name}</h2>
       <input
         type="checkbox"
@@ -33,7 +33,7 @@ const ToDoCard = ({
       />
       <label htmlFor="IsDone">Done</label>
       <button onClick={handlerDelete}>Delete</button>
-    </>
+    </article>
   );
 };
 export default ToDoCard;

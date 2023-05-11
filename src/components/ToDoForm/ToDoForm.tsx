@@ -23,12 +23,9 @@ const ToDoForm = (): JSX.Element => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form className="form" action="" onSubmit={handleSubmit}>
       <label htmlFor="name">New Task:</label>
       <input type="text" id="name" onChange={toDoInput} />
-
-      <label htmlFor="text">Update Task: </label>
-      <input type="text" />
       <button type="submit">Add ToDo</button>
     </form>
   );
