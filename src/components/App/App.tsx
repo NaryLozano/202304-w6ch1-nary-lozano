@@ -20,10 +20,10 @@ const App = (): JSX.Element => {
   }, [dispatch, getToDos]);
 
   return (
-    <>
+    <div className="container">
       <ToDoForm></ToDoForm>
       <ToDoList />
-    </>
+    </div>
   );
 };
 
